@@ -1,7 +1,7 @@
-function ExpCard({ company, position, startDate, endDate, description }){
+function ExpCard({ company, position, startDate, endDate, description, id }){
     return (
         <>
-            <form action="" method="get">
+            <li key={id}>
                 <div className="form-field">
                     <label htmlFor="company">Company name</label>
                     <input type="text" name="company" id="company" value={company}></input>
@@ -24,9 +24,9 @@ function ExpCard({ company, position, startDate, endDate, description }){
                 </div>
                 <div className="buttons-area">
                     <button>Delete</button>
-                    <button>Save</button>
                 </div>
-            </form>
+            </li>
+            <hr></hr>
         </>
     )
 }

@@ -1,7 +1,7 @@
-function EducCard({ school, degree, startDate, endDate }){
+function EducCard({ school, degree, startDate, endDate, id }){
     return (
         <>
-            <form action="" method="get">
+            <li key={id}>
                 <div className="form-field">
                     <label htmlFor="school">School</label>
                     <input type="text" name="school" id="school" value={school}></input>
@@ -22,7 +22,8 @@ function EducCard({ school, degree, startDate, endDate }){
                     <button>Delete</button>
                     <button>Save</button>
                 </div>
-            </form>
+            </li>
+            <hr></hr>
         </>
     )
 }

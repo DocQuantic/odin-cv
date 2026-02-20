@@ -5,8 +5,10 @@ function EducForm({educs}){
     return (
         <>
             <h1>Education</h1>
-            {educs.map(educ => <EducCard 
-                school={educ.school} degree={educ.degree} startDate={educ.startDate} endDate={educ.endDate}/>)}
+            <ul>
+                {educs.map(educ => <EducCard {...educ} />)}
+            </ul>
+            <button>Add New</button>
         </>
     )
 }
