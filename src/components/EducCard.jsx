@@ -1,4 +1,4 @@
-function EducCard({ education, onChange }){
+function EducCard({ education, onChange, onDel }){
     return (
         <>
             <li key={education.id} id={education.id}>
@@ -19,7 +19,7 @@ function EducCard({ education, onChange }){
                     <input type="date" name="end-date" id="end-date" value={education.endDate} onChange={onChange}></input>
                 </div>
                 <div className="buttons-area">
-                    <button>Delete</button>
+                    <button onClick={onDel}>Delete</button>
                 </div>
             </li>
             <hr></hr>

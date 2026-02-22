@@ -1,14 +1,14 @@
 import EducCard from "./EducCard"
 
-function EducForm({educs, onChange}){
+function EducForm({educs, onChange, onAddEduc, onDelEduc}){
 
     return (
         <>
             <h1>Education</h1>
             <ul>
-                {educs.map(educ => <EducCard education={educ} onChange={onChange}/>)}
+                {educs.map(educ => <EducCard education={educ} onChange={onChange} onDel={onDelEduc}/>)}
             </ul>
-            <button>Add New</button>
+            <button onClick={onAddEduc}>Add New</button>
         </>
     )
 }

@@ -1,4 +1,4 @@
-function ExpCard({ experience, onChange }){
+function ExpCard({ experience, onChange, onDel }){
     return (
         <>
             <li key={experience.id} id={experience.id}>
@@ -23,7 +23,7 @@ function ExpCard({ experience, onChange }){
                     <textarea name="description" id="description" rows={5} value={experience.description} onChange={onChange}></textarea>
                 </div>
                 <div className="buttons-area">
-                    <button>Delete</button>
+                    <button onClick={onDel}>Delete</button>
                 </div>
             </li>
             <hr></hr>

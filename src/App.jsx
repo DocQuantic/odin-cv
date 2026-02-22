@@ -7,45 +7,13 @@ import CV from './components/CV'
 
 function App() {
   let [info, setInfo] = useState({
-    name: "name",
-    mail: "mail",
-    phone: "00000000",
-    address: "address"
+    name: "",
+    mail: "",
+    phone: "",
+    address: ""
   })
-  let [educations, setEducations] = useState([
-    {
-      school: "school1",
-      degree: "deg1",
-      startDate: "2024-01-26",
-      endDate: "2024-01-26",
-      id: crypto.randomUUID()
-    },
-    {
-      school: "school2",
-      degree: "deg2",
-      startDate: "2024-01-26T00:00" ,
-      endDate: "2024-01-26T00:00",
-      id: crypto.randomUUID()
-    }
-  ])
-  let [experiences, setExperiences] = useState([
-    {
-      company: "comp1",
-      position: "pos1",
-      startDate: "2024-01-26",
-      endDate: "2024-01-26",
-      description: "descr1",
-      id: crypto.randomUUID()
-    },
-    {
-      company: "comp2",
-      position: "pos2",
-      startDate: "2024-01-26",
-      endDate: "2024-01-26",
-      description: "descr2",
-      id: crypto.randomUUID()
-    }
-  ]) 
+  let [educations, setEducations] = useState([])
+  let [experiences, setExperiences] = useState([]) 
 
   function handleInfoChange(e){
     switch(e.target.name){
@@ -113,12 +81,41 @@ function App() {
     }
   }
 
+  function handleNewEduc(){
+    setEducations([...educations, {
+      school: "",
+      degree: "",
+      startDate: "",
+      endDate: "",
+      id: crypto.randomUUID()
+    }])
+  }
+
+  function handleNewExp(){
+    setExperiences([...experiences, {
+      company: "",
+      position: "",
+      startDate: "",
+      endDate: "",
+      description: "",
+      id: crypto.randomUUID()
+    }])
+  }
+
+  function handleDelEduc(e){
+    setEducations(educations.filter(educ => educ.id !== e.target.parentNode.parentNode.id))
+  }
+
+  function handleDelExp(e){
+    setExperiences(experiences.filter(exp => exp.id !== e.target.parentNode.parentNode.id))
+  }
+
   return (
     <>
       <div className="forms">
         <GeneralForm info={info} onChange={handleInfoChange}/>
-        <EducForm educs={educations} onChange={handleEducChange}/>
-        <ExpForm exps={experiences} onChange={handleExpChange}/>
+        <EducForm educs={educations} onChange={handleEducChange} onAddEduc={handleNewEduc} onDelEduc={handleDelEduc}/>
+        <ExpForm exps={experiences} onChange={handleExpChange} onAddExp={handleNewExp} onDelExp={handleDelExp}/>
       </div>
       <div className="cv">
         <CV info={info} educations={educations} experiences={experiences}/>

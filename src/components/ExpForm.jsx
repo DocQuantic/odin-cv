@@ -1,14 +1,14 @@
 import ExpCard from "./ExpCard"
 
-function ExpForm({ exps, onChange }){
+function ExpForm({ exps, onChange, onAddExp, onDelExp }){
     return (
         <>
             <h1>Experiences</h1>
             <ul>
-                {exps.map(exp => <ExpCard experience={exp} onChange={onChange}/>)}
+                {exps.map(exp => <ExpCard experience={exp} onChange={onChange} onDel={onDelExp}/>)}
             </ul>
             
-            <button>Add New</button>
+            <button onClick={onAddExp}>Add New</button>
         </>
     )
 }
