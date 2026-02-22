@@ -12,31 +12,12 @@ function App() {
     phone: "00000000",
     address: "address"
   })
-  let experiences = [
-    {
-      company: "comp1",
-      position: "pos1",
-      startDate: "2024-01-26T00:00",
-      endDate: "2024-01-26T00:00",
-      description: "descr1",
-      id: crypto.randomUUID()
-    },
-    {
-      company: "comp2",
-      position: "pos2",
-      startDate: "2024-01-26T00:00",
-      endDate: "2024-01-26T00:00",
-      description: "descr2",
-      id: crypto.randomUUID()
-    }
-  ] 
-
-  let educations = [
+  let [educations, setEducations] = useState([
     {
       school: "school1",
       degree: "deg1",
-      startDate: "2024-01-26T00:00",
-      endDate: "2024-01-26T00:00",
+      startDate: "2024-01-26",
+      endDate: "2024-01-26",
       id: crypto.randomUUID()
     },
     {
@@ -46,7 +27,25 @@ function App() {
       endDate: "2024-01-26T00:00",
       id: crypto.randomUUID()
     }
-  ]
+  ])
+  let [experiences, setExperiences] = useState([
+    {
+      company: "comp1",
+      position: "pos1",
+      startDate: "2024-01-26",
+      endDate: "2024-01-26",
+      description: "descr1",
+      id: crypto.randomUUID()
+    },
+    {
+      company: "comp2",
+      position: "pos2",
+      startDate: "2024-01-26",
+      endDate: "2024-01-26",
+      description: "descr2",
+      id: crypto.randomUUID()
+    }
+  ]) 
 
   function handleInfoChange(e){
     switch(e.target.name){
@@ -65,15 +64,64 @@ function App() {
     }
   }
 
+  function handleEducChange(e){
+    let newEducs
+    switch(e.target.name){
+      case "school":
+        newEducs = educations.map(educ => educ.id === e.target.parentNode.parentNode.id ? {...educ, school: e.target.value} : educ)
+        setEducations(newEducs)
+        break;
+      case "degree":
+        newEducs = educations.map(educ => educ.id === e.target.parentNode.parentNode.id ? {...educ, degree: e.target.value} : educ)
+        setEducations(newEducs)
+        break;
+      case "start-date":
+        newEducs = educations.map(educ => educ.id === e.target.parentNode.parentNode.id ? {...educ, startDate: e.target.value} : educ)
+        setEducations(newEducs)
+        break;
+      case "end-date":
+        newEducs = educations.map(educ => educ.id === e.target.parentNode.parentNode.id ? {...educ, endDate: e.target.value} : educ)
+        setEducations(newEducs)
+        break;
+    }
+  }
+
+  function handleExpChange(e){
+    let newExps
+    switch(e.target.name){
+      case "company":
+        newExps = experiences.map(exp => exp.id === e.target.parentNode.parentNode.id ? {...exp, company: e.target.value} : exp)
+        console.log(newExps)
+        setExperiences(newExps)
+        break;
+      case "position":
+        newExps = experiences.map(exp => exp.id === e.target.parentNode.parentNode.id ? {...exp, position: e.target.value} : exp)
+        setExperiences(newExps)
+        break;
+      case "description":
+        newExps = experiences.map(exp => exp.id === e.target.parentNode.parentNode.id ? {...exp, description: e.target.value} : exp)
+        setExperiences(newExps)
+        break;
+      case "start-date":
+        newExps = experiences.map(exp => exp.id === e.target.parentNode.parentNode.id ? {...exp, startDate: e.target.value} : exp)
+        setExperiences(newExps)
+        break;
+      case "end-date":
+        newExps = experiences.map(exp => exp.id === e.target.parentNode.parentNode.id ? {...exp, endDate: e.target.value} : exp)
+        setExperiences(newExps)
+        break;
+    }
+  }
+
   return (
     <>
       <div className="forms">
         <GeneralForm info={info} onChange={handleInfoChange}/>
-        <EducForm educs={educations}/>
-        <ExpForm exps={experiences}/>
+        <EducForm educs={educations} onChange={handleEducChange}/>
+        <ExpForm exps={experiences} onChange={handleExpChange}/>
       </div>
       <div className="cv">
-        <CV info={info}/>
+        <CV info={info} educations={educations} experiences={experiences}/>
       </div>
     </>
   )

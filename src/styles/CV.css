@@ -1,0 +1,11 @@
+.head{
+    width: 100%;
+    background-color: rgb(79, 93, 153);
+}
+
+.info{
+    display: flex;
+    flex-direction: row;
+    gap: 2em;
+    justify-content: center;
+}
