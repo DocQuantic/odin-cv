@@ -1,10 +1,14 @@
 function ExpEntry({experience}){
     return(
         <>
-            <h2>{experience.position}</h2>
-            <h3>{experience.company}</h3>
-            <p>{experience.startDate} - {experience.endDate}</p>
-            <p>{experience.description}</p>
+            <div className="entry">
+                <p>{experience.startDate} - {experience.endDate}</p>
+                <h2>{experience.position}</h2>
+                <p></p>
+                <h3>{experience.company}</h3>
+                <p></p>
+                <p>{experience.description}</p>
+            </div>
         </>
     )
 }

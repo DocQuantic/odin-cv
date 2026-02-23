@@ -1,4 +1,3 @@
-import '../styles/CV.css'
 import EducEntry from './EducEntry'
 import ExpEntry from './ExpEntry'
 

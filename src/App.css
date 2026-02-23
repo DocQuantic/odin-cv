@@ -1,3 +1,8 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
 #root {
   max-width: 1280px;
   margin: 0 auto;
@@ -5,10 +10,62 @@
   text-align: center;
   display: grid;
   grid-template-columns: 1fr 3fr;
-  gap: 5em;
+  gap: 5rem;
 }
 
 form{
   display: flex;
   flex-direction: column;
+}
+
+h1{
+  margin-bottom: 1rem;
+}
+
+.head{
+  width: 100%;
+  background-color: rgb(79, 93, 153);
+  padding: 2rem 1rem;
+  margin-bottom: 2rem;
+}
+
+.info{
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.educ{
+  margin-bottom: 2rem;
+}
+
+.entry{
+  display: grid;
+  text-align: left;
+  grid-template-columns: 1fr 5fr;
+  gap: 0rem 2rem;
+  align-items: center;
+  margin: 0 2rem 1rem 2rem;
+}
+
+li{
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 1rem 0.5rem;
+  text-align: left;
+  margin: 1rem 0;
+}
+
+li>button{
+  grid-column: span 2;
+  width: 8rem;
+  text-align: center;
+  margin: auto;
+}
+
+input{
+  border: 2px solid rgb(187, 187, 187);
+  border-radius: 6px;
 }

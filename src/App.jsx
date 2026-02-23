@@ -36,19 +36,19 @@ function App() {
     let newEducs
     switch(e.target.name){
       case "school":
-        newEducs = educations.map(educ => educ.id === e.target.parentNode.parentNode.id ? {...educ, school: e.target.value} : educ)
+        newEducs = educations.map(educ => educ.id === e.target.parentNode.id ? {...educ, school: e.target.value} : educ)
         setEducations(newEducs)
         break;
       case "degree":
-        newEducs = educations.map(educ => educ.id === e.target.parentNode.parentNode.id ? {...educ, degree: e.target.value} : educ)
+        newEducs = educations.map(educ => educ.id === e.target.parentNode.id ? {...educ, degree: e.target.value} : educ)
         setEducations(newEducs)
         break;
       case "start-date":
-        newEducs = educations.map(educ => educ.id === e.target.parentNode.parentNode.id ? {...educ, startDate: e.target.value} : educ)
+        newEducs = educations.map(educ => educ.id === e.target.parentNode.id ? {...educ, startDate: e.target.value} : educ)
         setEducations(newEducs)
         break;
       case "end-date":
-        newEducs = educations.map(educ => educ.id === e.target.parentNode.parentNode.id ? {...educ, endDate: e.target.value} : educ)
+        newEducs = educations.map(educ => educ.id === e.target.parentNode.id ? {...educ, endDate: e.target.value} : educ)
         setEducations(newEducs)
         break;
     }
@@ -58,24 +58,24 @@ function App() {
     let newExps
     switch(e.target.name){
       case "company":
-        newExps = experiences.map(exp => exp.id === e.target.parentNode.parentNode.id ? {...exp, company: e.target.value} : exp)
+        newExps = experiences.map(exp => exp.id === e.target.parentNode.id ? {...exp, company: e.target.value} : exp)
         console.log(newExps)
         setExperiences(newExps)
         break;
       case "position":
-        newExps = experiences.map(exp => exp.id === e.target.parentNode.parentNode.id ? {...exp, position: e.target.value} : exp)
+        newExps = experiences.map(exp => exp.id === e.target.parentNode.id ? {...exp, position: e.target.value} : exp)
         setExperiences(newExps)
         break;
       case "description":
-        newExps = experiences.map(exp => exp.id === e.target.parentNode.parentNode.id ? {...exp, description: e.target.value} : exp)
+        newExps = experiences.map(exp => exp.id === e.target.parentNode.id ? {...exp, description: e.target.value} : exp)
         setExperiences(newExps)
         break;
       case "start-date":
-        newExps = experiences.map(exp => exp.id === e.target.parentNode.parentNode.id ? {...exp, startDate: e.target.value} : exp)
+        newExps = experiences.map(exp => exp.id === e.target.parentNode.id ? {...exp, startDate: e.target.value} : exp)
         setExperiences(newExps)
         break;
       case "end-date":
-        newExps = experiences.map(exp => exp.id === e.target.parentNode.parentNode.id ? {...exp, endDate: e.target.value} : exp)
+        newExps = experiences.map(exp => exp.id === e.target.parentNode.id ? {...exp, endDate: e.target.value} : exp)
         setExperiences(newExps)
         break;
     }
