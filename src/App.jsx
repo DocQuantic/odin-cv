@@ -103,11 +103,11 @@ function App() {
   }
 
   function handleDelEduc(e){
-    setEducations(educations.filter(educ => educ.id !== e.target.parentNode.parentNode.id))
+    setEducations(educations.filter(educ => educ.id !== e.target.parentNode.id))
   }
 
   function handleDelExp(e){
-    setExperiences(experiences.filter(exp => exp.id !== e.target.parentNode.parentNode.id))
+    setExperiences(experiences.filter(exp => exp.id !== e.target.parentNode.id))
   }
 
   return (
